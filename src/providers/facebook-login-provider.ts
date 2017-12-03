@@ -35,6 +35,8 @@ export class FacebookLoginProvider extends BaseLoginProvider {
                 user.firstName = response.first_name;
                 user.lastName = response.last_name;
 
+                user.access_token = FB.getAccessToken();
+
                 resolve(user);
               });
             }
@@ -57,6 +59,8 @@ export class FacebookLoginProvider extends BaseLoginProvider {
             user.firstName = response.first_name;
             user.lastName = response.last_name;
 
+            user.access_token = FB.getAccessToken();
+            
             resolve(user);
           });
         }
